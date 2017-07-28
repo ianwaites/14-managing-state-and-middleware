@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
 
-// COMMENT: What is this function doing? Why do we need it? Where does it receive a request from?
-// (put your response in a comment here)
+// DONE: What is this function doing? Why do we need it? Where does it receive a request from?
+// (proxyGitHub is sending a proxy request to the github server and using the environmental variable GITHUB_TOKEN to authenticate the request while keeping that variable hiddedn from the public facing portion of the code)
 function proxyGitHub(request, response) {
   console.log('Routing GitHub request for', request.params[0]);
   (requestProxy({
@@ -29,8 +29,8 @@ function proxyGitHub(request, response) {
 }
 
 
-// COMMENT: What is this route doing? Where does it receive a request from?
-// (put your response in a comment here)
+// DONE: What is this route doing? Where does it receive a request from?
+// (It receives its request from the user - This route is sending new.html and admin.html when the function is called in a different part of the program.)
 app.get('/new', (request, response) => response.sendFile('new.html', {root: './public'}));
 app.get('/admin', (request, response) => response.sendFile('admin.html', {root: './public'}));
 app.get('/github/*', proxyGitHub);
@@ -106,8 +106,8 @@ app.post('/articles', function(request, response) {
 });
 
 
-// COMMENT: What is this route doing? Where does it receive a request from?
-// (put your response in a comment here)
+// DONE What is this route doing? Where does it receive a request from?
+// (This route is sending an update via SQL to a database to see the author equal to the properties of an object))
 app.put('/articles/:id', (request, response) => {
   client.query(`
     UPDATE authors

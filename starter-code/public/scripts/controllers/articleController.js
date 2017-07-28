@@ -4,8 +4,8 @@ var app = app || {};
 (function(module) {
   const articleController = {};
 
-  // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
-  // 
+  // DONE: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+  // This function is calling the article view of the single page. It's called in routes.js to indicate it serves s the route to navigate in said single page.
   // This function is called in routes.js
   articleController.index = (ctx) => app.articleView.index(ctx.articles);
 
@@ -16,8 +16,8 @@ var app = app || {};
       next();
     };
 
-    // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
-    // (put your response in a comment here)
+    // DONE: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+    // (This function is set to try and find an individual article. It is called in the articleController.loadByAuthor function below)
     app.Article.findWhere('article_id', ctx.params.article_id, articleData);
   };
 

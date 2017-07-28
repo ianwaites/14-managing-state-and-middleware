@@ -13,7 +13,7 @@ var app = app || {};
 
   // REVIEW: With ES6 arrow functions, if the function only has one parameter, you don't need parentheses.
   //         This is similar to saying Article.loadAll = function(rows).
-    // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+    // DONE: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
     // the First line sorts all of the articles by Date
     // the second line is creating instances in the Article.all array (creating the articles).
     // the Article.loadAll function also gets called in the fetchAll function
@@ -22,7 +22,7 @@ var app = app || {};
     Article.all = rows.map(ele => new Article(ele));
   };
 
-  // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+  // DONE: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
   // COMEBACK: The fetchAll function has a parameter of a callback funtion and is creating an arrow function that is getting all of the articles then passing them to the loadAll function as a callback
   Article.fetchAll = callback => {
     $.get('/articles')
@@ -58,7 +58,7 @@ var app = app || {};
                       }, []);
   };
 
-  // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+  // DONE: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
   // Article.numWordsByAuthor is essentially finding the length of the article body
   // Within numWordsByAuthor it is returning the allAuthors function which is an array of the author names
   // Then numWordsByAuthor is creating an object with properties of the authors name and the numbor of words used in the body of each article matched to the authors name
@@ -81,7 +81,7 @@ var app = app || {};
     }
   };
 
-  // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+  // DONE: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
   // truncateTable is making an ajax call and deleting the content within the articles table
   Article.truncateTable = callback => {
     $.ajax({

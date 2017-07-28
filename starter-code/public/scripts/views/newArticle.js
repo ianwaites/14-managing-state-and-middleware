@@ -5,6 +5,9 @@ var app = app || {};
   const newArticle = {};
 
   // COMMENT: What is this function doing? Where is it called? Does it call any other functions, and if so, in what file(s) do those function(s) live?
+
+  // This function initiates the page allowing people to create a new article
+  //
   newArticle.initNewArticlePage = function() {
     $('.tab-content').show();
     $('#export-field').hide();
